@@ -33,6 +33,10 @@ Use these sources:
 - GitHub Changelog: https://github.blog/changelog/
 - Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
+Fetch each URL above with the `web-fetch` tool. Shell commands (`curl`, `wget`,
+etc.) do not have network access in this sandbox and will be denied; only the
+`web-fetch` tool can reach the allowed domains.
+
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
 from the GitHub Blog or GitHub Changelog.
@@ -45,8 +49,8 @@ rely on `safe-outputs` with `create-pull-request`.
 ## Instructions
 
 1. Read [notes/mona-notes.md](../../notes/mona-notes.md) to understand Mona's editorial preferences and tone.
-2. Web fetch `https://github.blog/latest/` to see the latest GitHub Blog posts.
-3. Web fetch `https://github.blog/changelog/` to see the latest GitHub Changelog entries.
+2. Use the `web-fetch` tool (not a shell command) to fetch `https://github.blog/latest/` and see the latest GitHub Blog posts.
+3. Use the `web-fetch` tool (not a shell command) to fetch `https://github.blog/changelog/` and see the latest GitHub Changelog entries.
 4. Read the current content of `site/content/github-info.md`.
 5. Update `site/content/github-info.md` to reflect notable, relevant stories from the blog and changelog, following Mona's preferences (short, practical summaries; mention the source whenever a change comes from the GitHub Blog or GitHub Changelog).
 6. Open a pull request with the updated content so Mona can review the changes before they go live. Do not push directly to the default branch.
