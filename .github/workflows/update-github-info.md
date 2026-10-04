@@ -33,9 +33,12 @@ Use these sources:
 - GitHub Changelog: https://github.blog/changelog/
 - Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
-Fetch each URL above with the `web-fetch` tool. Shell commands (`curl`, `wget`,
-etc.) do not have network access in this sandbox and will be denied; only the
-`web-fetch` tool can reach the allowed domains.
+This workflow has a `web-fetch` tool (compiled as the native `web_fetch`
+capability) enabled and confirmed available in every run. Call it directly for
+each URL above instead of a shell command. Shell commands (`curl`, `wget`,
+etc.) do not have network access in this sandbox and will be denied. Do not
+report `web-fetch`/`web_fetch` as a missing tool; if a fetch call itself fails,
+retry once, then continue with the sources you could fetch.
 
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
