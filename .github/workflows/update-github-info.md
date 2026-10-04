@@ -38,13 +38,16 @@ capability) enabled for every run. Call it directly for each URL above
 instead of a shell command. Shell commands (`curl`, `wget`, etc.) do not have
 network access in this sandbox and will be denied.
 
-IMPORTANT — tool-availability fallback: on rare runs the `web-fetch`/`web_fetch`
-tool may not appear in your available tools/functions list. If that happens,
-do NOT call `missing_tool` and do NOT stop. Calling `missing_tool` aborts the
-run before any pull request is opened, which blocks this workflow's purpose.
-Instead, always complete the task end-to-end:
-- If `web-fetch`/`web_fetch` is unavailable or a fetch call fails (even after
-  one retry), continue without live blog/changelog content.
+IMPORTANT — tool-availability fallback: on rare runs `web-fetch`/`web_fetch`
+may not show up as one of the callable tools/functions you were given for
+this turn (you would notice this before calling it, since it simply would
+not be in the list of functions available to you to call), or calling it may
+error/fail. Either way, do NOT call `missing_tool` and do NOT stop. Calling
+`missing_tool` aborts the run before any pull request is opened, which blocks
+this workflow's purpose. Instead, always complete the task end-to-end:
+- If `web-fetch`/`web_fetch` is absent from your callable tools, or a fetch
+  call errors out (even after one retry), continue without live blog/changelog
+  content.
 - Still update `site/content/github-info.md` using at least
   `notes/mona-notes.md`, and list the GitHub Blog, GitHub Changelog, and
   Awesome Copilot workflows URLs above as "Sources to check" so Mona knows
