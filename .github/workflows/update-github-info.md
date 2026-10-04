@@ -15,6 +15,7 @@ network:
     - defaults
     - github.com
     - github.blog
+    - awesome-copilot.github.com
 safe-outputs:
   create-pull-request:
     title-prefix: "[update-github-info] "
@@ -30,6 +31,7 @@ Use these sources:
 - `notes/mona-notes.md`
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
+- Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
